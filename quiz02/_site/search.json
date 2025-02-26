@@ -1,0 +1,37 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "quiz02",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  },
+  {
+    "objectID": "life-population.html",
+    "href": "life-population.html",
+    "title": "Life Expectancy and Population",
+    "section": "",
+    "text": "This page is analysing the relationship between life expectancy and population\n\nlibrary(ggplot2)\nlibrary(gapminder)\n\n# Create scatterplot\nggplot(gapminder, aes(x = pop, y = lifeExp)) +\n  geom_point(alpha = 0.6) +\n  scale_x_log10() +  # Log scale for better visualization\n  labs(\n    title = \"Life Expectancy vs. Population\",\n    x = \"Population (log scale)\",\n    y = \"Life Expectancy (years)\"\n  ) +\n  theme_minimal()"
+  },
+  {
+    "objectID": "country.html",
+    "href": "country.html",
+    "title": "Specific Country Analysis",
+    "section": "",
+    "text": "This page is analysing changes in life expectancy, GDP per capita, and population for a specific country over time\n\n# Load necessary packages\nlibrary(ggplot2)\nlibrary(gapminder)\nlibrary(dplyr)\n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\n# Select a country (change this to analyze a different country)\ncountry_name &lt;- \"United States\"\n\n# Filter dataset for the chosen country\ncountry_data &lt;- gapminder %&gt;% filter(country == country_name)\n\n# Create line plots for each variable over time\nggplot(country_data, aes(x = year)) +\n  geom_line(aes(y = lifeExp, color = \"Life Expectancy\"), size = 1) +\n  geom_line(aes(y = gdpPercap / 1000, color = \"GDP per Capita (x1000)\"), size = 1) + \n  geom_line(aes(y = pop / 1e7, color = \"Population (x10M)\"), size = 1) +\n  labs(\n    title = paste(\"Trends in\", country_name, \"Over Time\"),\n    x = \"Year\",\n    y = \"Scaled Values\",\n    color = \"Metric\"\n  ) +\n  theme_minimal()\n\nWarning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.\nℹ Please use `linewidth` instead."
+  },
+  {
+    "objectID": "life-gdp.html",
+    "href": "life-gdp.html",
+    "title": "Life Expectancy and GDP Per Capita",
+    "section": "",
+    "text": "This page shows a graph of the relationship between Life Expectance and GDP Per Capita\n\nlibrary(ggplot2)\nlibrary(gapminder)\n\n# Create scatterplot\nggplot(gapminder, aes(x = gdpPercap, y = lifeExp)) +\n  geom_point(alpha = 0.6) +\n  scale_x_log10() +  # Log scale for better visualization\n  labs(\n    title = \"Life Expectancy vs. GDP per Capita\",\n    x = \"GDP per Capita (log scale)\",\n    y = \"Life Expectancy (years)\"\n  ) +\n  theme_minimal()"
+  }
+]

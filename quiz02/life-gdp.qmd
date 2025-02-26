@@ -1,0 +1,24 @@
+---
+title: "Life Expectancy and GDP Per Capita"
+---
+
+This page shows a graph of the relationship between Life Expectance and GDP Per Capita
+
+```{r}
+library(ggplot2)
+library(gapminder)
+
+# Create scatterplot
+ggplot(gapminder, aes(x = gdpPercap, y = lifeExp)) +
+  geom_point(alpha = 0.6) +
+  scale_x_log10() + 
+  labs(
+    title = "Life Expectancy vs. GDP per Capita",
+    x = "GDP per Capita (log scale)",
+    y = "Life Expectancy (years)"
+  ) +
+  theme_minimal()
+```
+
+
+

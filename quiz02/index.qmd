@@ -1,0 +1,9 @@
+---
+title: "QTM 350 - Quiz 2"
+---
+
+The gapminder dataset tracks economic and social indicators of countries over time
+
+- [Life Expectancy and GDP per Capita](life-gdp.qmd)
+- [Life Expectancy and Population](life-population.qmd)
+- [Country Analysis](country.qmd)

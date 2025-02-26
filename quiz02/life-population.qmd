@@ -1,0 +1,21 @@
+---
+title: "Life Expectancy and Population"
+---
+
+This page is analysing the relationship between life expectancy and population
+
+```{r}
+library(ggplot2)
+library(gapminder)
+
+# Create scatterplot
+ggplot(gapminder, aes(x = pop, y = lifeExp)) +
+  geom_point(alpha = 0.6) +
+  scale_x_log10() + 
+  labs(
+    title = "Life Expectancy vs. Population",
+    x = "Population (log scale)",
+    y = "Life Expectancy (years)"
+  ) +
+  theme_minimal()
+```

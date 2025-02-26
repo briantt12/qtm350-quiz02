@@ -1,0 +1,37 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "quiz02"
+  page-navigation: true
+  back-to-top-navigation: true
+  reader-mode: true
+  repo-url: https://github.com/danilofreire/qtm350
+  repo-actions: [issue, source]
+  repo-branch: gh-pages
+  navbar:
+    pinned: true
+    tools:
+      - icon: github
+        href: https://github.com/danilofreire/qtm350
+    left:
+      - href: index.qmd
+        text: Home
+      - href: life-gdp.qmd
+        text: Life Expectancy vs. GDP
+      - href: life-population.qmd
+        text: Life Expectancy vs. Population
+      - href: country.qmd
+        text: United States
+
+format:
+  html:
+    theme:
+      - quartz
+      - brand
+    css: styles.css
+    toc: true
+
+
+
